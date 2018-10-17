@@ -5,7 +5,6 @@
  *  file: LinkedListConstIter.cpp
  */
 
-#include "LinkedListConstIter.h"
 /**
  * Equivalence operator checks whether two const iterators have mPtr that
  * point to the same thing

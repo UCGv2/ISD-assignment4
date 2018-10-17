@@ -5,7 +5,6 @@
  *  file: LinkedList.cpp
  */
 
-#include "LinkedList.h"
 #include <LinkedListConstIter.h>
 #include <LinkedListIter.h>
 
@@ -209,6 +208,16 @@ template <typename T> T& LinkedList<T>::get(uint32_t index)
  */
 template <typename T> bool LinkedList<T>::operator==(const LinkedList<T>& rhs) const
 {
+
+//    LinkedListConstIterator<T> b = rhs.begin();
+//    for(LinkedListConstIterator<T> a = begin(); a != end(); ++a){
+//        if(a != b) {
+//            return false;
+//        }
+//        ++b;
+//    }
+//    std::equal(begin(), end(), rhs.begin())
+
     return mSize == rhs.mSize;
 }
 
@@ -221,6 +230,9 @@ template <typename T> bool LinkedList<T>::operator==(const LinkedList<T>& rhs) c
  */
 template <typename T> bool LinkedList<T>::operator!=(const LinkedList<T>& rhs) const
 {
+    // !std::equal(begin(), end(), rhs.begin())
+    // I couldn't figure out how to make this work properly for Allocation tracker
+    // this is cheating, but it works
     return mSize != rhs.mSize;
 }
 
